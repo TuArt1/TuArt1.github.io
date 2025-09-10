@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarbas das Taças - Réplicas de Troféus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0d1b3e 0%, #152852 50%, #1c3269 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .logo-container {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #f9e076 100%);
+            padding: 25px 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0d1b3e;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.4);
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0d1b3e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            margin: 25px 0;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .link-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .link-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 18px;
+            font-size: 1.6rem;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+        }
+        
+        .link-text {
+            flex: 1;
+        }
+        
+        .link-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 7px;
+            color: #ffd700;
+        }
+        
+        .link-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .whatsapp-button {
+            display: block;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(18, 140, 126, 0.4);
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(18, 140, 126, 0.6);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 35px;
+        }
+        
+        .social-icons a {
+            color: #ffd700;
+            font-size: 1.8rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            width: 100%;
+        }
+        
+        .trophy-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .trophy {
+            font-size: 2.5rem;
+            color: #ffd700;
+            animation: shine 3s infinite;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        @keyframes shine {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .divider {
+            height: 3px;
+            width: 80%;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            margin: 20px auto;
+        }
+        
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        /* Modal para o PDF */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: #0d1b3e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #ffd700;
+        }
+        
+        .close {
+            color: #ffd700;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -10px;
+            margin-right: -10px;
+        }
+        
+        .close:hover {
+            color: #fff;
+        }
+        
+        .pdf-button {
+            display: block;
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+            color: #0d1b3e;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: transform 0.3s;
+        }
+        
+        .pdf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .pdf-icon {
+            font-size: 3rem;
+            color: #ffd700;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <h1 class="name">JARBAS<br>MENEGHINI</h1>
+                <div class="divider"></div>
+                <h2 class="subtitle">JARBAS DAS TACAS</h2>
+            </div>
+            
+            <p class="description">Réplicas de troféus e taças de <span class="highlight">alta qualidade</span> para todas as ocasiões. Entre em contato pelo WhatsApp para encomendar!</p>
+            
+            <div class="trophy-showcase">
+                <div class="trophy"><i class="fas fa-trophy"></i></div>
+                <div class="trophy"><i class="fas fa-medal"></i></div>
+                <div class="trophy"><i class="fas fa-award"></i></div>
+            </div>
+        </header>
+        
+        <div class="links-container">
+            <div class="link-card" id="catalog-card">
+                <div class="link-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Catálogo Completo</h3>
+                    <p>Veja todos os modelos de troféus e taças disponíveis</p>
+                </div>
+            </div>
+            
+            <div class="link-card" onclick="window.location.href='https://wa.me/5521987296457?text=Olá!%20Gostaria%20de%20informações%20sobre%20preços%20e%20promoções'">
+                <div class="link-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Preços e Promoções</h3>
+                    <p>Confira nossos valores especiais para encomendas</p>
+                </div>
+            </div>
+            
+            <div class="link-card" onclick="window.location.href='https://wa.me/5521987296457?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20qualidade%20dos%20produtos'">
+                <div class="link-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Qualidade Garantida</h3>
+                    <p>Materiais premium e acabamento impecável</p>
+                </div>
+            </div>
+            
+            <div class="link-card" onclick="window.location.href='https://wa.me/5521987296457?text=Olá!%20Gostaria%20de%20informações%20sobre%20entregas'">
+                <div class="link-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Entregas</h3>
+                    <p>Entregamos para todo o Brasil</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://wa.me/5521987296457?text=Olá!%20Gostaria%20de%20informações%20sobre%20réplicas%20de%20troféus" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+        </a>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <footer>
+            <p>Jarbas das Taças &copy; 2023 - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <!-- Modal para visualização do PDF -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="pdf-icon">
+                <i class="fas fa-file-pdf"></i>
+            </div>
+            <h2>Catálogo de Produtos</h2>
+            <p>Escolha como deseja visualizar nosso catálogo:</p>
+            <a href="teste CATALAGO TAÇAS .pdf" class="pdf-button" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Abrir PDF em Nova Janela
+            </a>
+            <a href="teste CATALAGO TAÇAS .pdf" class="pdf-button" download>
+                <i class="fas fa-download"></i> Baixar Catálogo em PDF
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Efeitos interativos para os elementos
+        document.addEventListener('DOMContentLoaded', function() {
+            const linkCards = document.querySelectorAll('.link-card');
+            const modal = document.getElementById('pdfModal');
+            const closeBtn = document.querySelector('.close');
+            
+            // Configurar o card do catálogo para abrir o modal
+            document.getElementById('catalog-card').addEventListener('click', function() {
+                modal.style.display = 'flex';
+            });
+            
+            // Fechar o modal quando clicar no X
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Fechar o modal quando clicar fora dele
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Animação de digitação para o título
+            const nameElement = document.querySelector('.name');
+            const originalName = nameElement.textContent;
+            nameElement.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalName.length) {
+                    nameElement.textContent += originalName.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
